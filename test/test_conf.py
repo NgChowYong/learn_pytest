@@ -1,7 +1,5 @@
 import pytest
-import sys
-sys.path.insert(0, '../pytesting')
-from src.py_testing import School
+from learn_pytest.src.py_testing import School
 
 
 @pytest.fixture(scope="session")
