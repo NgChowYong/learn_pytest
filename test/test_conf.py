@@ -39,7 +39,8 @@ def test_student_number_1(school):
 @pytest.mark.number
 def test_student_number_2(school):
     result = [["s1", "test_a"]]
-    school.clearStudents()  # note that fixture will be called once, variable is not cleared
+    # note that fixture will be called once, variable is not cleared
+    school.clearStudents()
     school.createStudent(result)
     assert school.getNumberOfStudents() == 1
 
