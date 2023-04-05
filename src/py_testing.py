@@ -10,7 +10,7 @@ class Student:
 class School:
     def __init__(self, name):
         self.name = name
-        self.students = []
+        self.students = {}
 
     def readConf(self, file):
         try:
@@ -26,7 +26,14 @@ class School:
 
     def createStudent(self, conf):
         for student_conf in conf:
-            self.students.append(Student(student_conf[0], student_conf[1]))
+            self.students[student_conf[0]] = Student(
+                student_conf[0], student_conf[1])
 
     def getStudents(self):
         return self.students
+
+    def getNumberOfStudents(self):
+        return len(self.students)
+
+    def clearStudents(self):
+        return self.students.clear()
