@@ -5,6 +5,16 @@ from learn_pytest.src.py_testing import School
 # in the current directory and subdirectories.
 
 
+def setup_function():
+    # setup and teardown functions for each test
+    pass
+
+
+def teardown_function():
+    # setup and teardown functions for each test
+    pass
+
+
 def test_read_conf(school):
     result = [["s1", "test_a"], ["s2", "test_b"]]
     conf = school.readConf("test_conf.txt")
@@ -29,7 +39,7 @@ def test_student_number_1(school):
 @pytest.mark.number
 def test_student_number_2(school):
     result = [["s1", "test_a"]]
-    school.clearStudents() # note that fixture will be called once, variable is not cleared
+    school.clearStudents()  # note that fixture will be called once, variable is not cleared
     school.createStudent(result)
     assert school.getNumberOfStudents() == 1
 
